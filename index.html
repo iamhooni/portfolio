@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Hacker Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="terminal-prompt">&gt;_</span>
+                <span class="brand-name">WebHacker</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education-career">학력·경력</a></li>
+                <li><a href="#training">교육</a></li>
+                <li><a href="#activities">활동</a></li>
+                <li><a href="#projects">프로젝트</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section / About Me -->
+    <section id="about" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="glitch-wrapper">
+                    <h1 class="hero-title" data-text="Web Security Researcher">Web Security Researcher</h1>
+                </div>
+                <div class="typing-wrapper">
+                    <p class="hero-subtitle">
+                        <span class="prompt">&gt;</span>
+                        <span class="typing-text" id="typing-text"></span>
+                        <span class="cursor">|</span>
+                    </p>
+                </div>
+                <div class="hero-description">
+                    <p>안녕하세요! 웹 보안에 열정을 가진 신입 연구원입니다.</p>
+                    <p>취약점 분석과 모의해킹을 통해 더 안전한 웹 환경을 만들어가고 있습니다.</p>
+                    <p class="tech-stack">
+                        <span class="tag">Web Hacking</span>
+                        <span class="tag">Penetration Testing</span>
+                        <span class="tag">Vulnerability Analysis</span>
+                        <span class="tag">Bug Bounty</span>
+                    </p>
+                </div>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
+                    <a href="#contact" class="btn btn-secondary">연락하기</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                        <span class="window-title">exploit.py</span>
+                    </div>
+                    <div class="window-body">
+                        <pre><code><span class="comment"># SQL Injection Detection</span>
+<span class="keyword">import</span> requests
+
+<span class="keyword">def</span> <span class="function">test_sqli</span>(url):
+    <span class="string">payload = "' OR '1'='1"</span>
+    <span class="keyword">response</span> = requests.get(url, params=payload)
+    <span class="keyword">if</span> <span class="string">"error"</span> <span class="keyword">in</span> response.text:
+        <span class="keyword">return</span> <span class="string">"Vulnerable!"</span>
+    <span class="keyword">return</span> <span class="string">"Safe"</span>
+
+<span class="comment"># Scanning target...</span>
+<span class="success">[+] Vulnerability found!</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 학력 & 경력 Section -->
+    <section id="education-career" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">01.</span>
+                학력 & 경력사항
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020.03 - 2024.02</span>
+                        <h3>OO대학교 컴퓨터공학과</h3>
+                        <p>학사 졸업 | GPA 3.8/4.5</p>
+                        <ul>
+                            <li>정보보안 동아리 활동</li>
+                            <li>웹 보안 관련 프로젝트 수행</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023.06 - 2023.12</span>
+                        <h3>보안회사 인턴</h3>
+                        <p>모의해킹팀 인턴십</p>
+                        <ul>
+                            <li>웹 애플리케이션 취약점 진단</li>
+                            <li>모의해킹 보고서 작성</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 교육 Section -->
+    <section id="training" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">02.</span>
+                교육
+            </h2>
+            <div class="cards-grid">
+                <div class="card" data-modal="training-1">
+                    <div class="card-header">
+                        <div class="card-icon">🎓</div>
+                        <span class="card-badge">수료</span>
+                    </div>
+                    <h3>웹 해킹 심화 과정</h3>
+                    <p class="card-date">2023.01 - 2023.03</p>
+                    <p>웹 애플리케이션 보안 심화 교육</p>
+                    <ul class="card-list">
+                        <li>OWASP Top 10 취약점 분석</li>
+                        <li>SQL Injection, XSS 실습</li>
+                        <li>모의해킹 프로젝트 수행</li>
+                    </ul>
+                    <button class="card-btn">자세히 보기 →</button>
+                </div>
+
+                <div class="card" data-modal="training-2">
+                    <div class="card-header">
+                        <div class="card-icon">🔒</div>
+                        <span class="card-badge">수료</span>
+                    </div>
+                    <h3>모의해킹 전문가 과정</h3>
+                    <p class="card-date">2023.06 - 2023.08</p>
+                    <p>실전 모의해킹 교육</p>
+                    <ul class="card-list">
+                        <li>침투 테스트 방법론</li>
+                        <li>네트워크 보안 진단</li>
+                        <li>보안 솔루션 우회 기법</li>
+                    </ul>
+                    <button class="card-btn">자세히 보기 →</button>
+                </div>
+
+                <div class="card" data-modal="training-3">
+                    <div class="card-header">
+                        <div class="card-icon">🛡️</div>
+                        <span class="card-badge">수료</span>
+                    </div>
+                    <h3>Bug Bounty 헌터 과정</h3>
+                    <p class="card-date">2023.09 - 2023.11</p>
+                    <p>버그바운티 실전 교육</p>
+                    <ul class="card-list">
+                        <li>취약점 리서치 방법론</li>
+                        <li>PoC 작성 및 보고서 작성</li>
+                        <li>실제 버그바운티 참여</li>
+                    </ul>
+                    <button class="card-btn">자세히 보기 →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 활동 Section -->
+    <section id="activities" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">03.</span>
+                활동
+            </h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon">🏆</div>
+                    <div class="activity-content">
+                        <h3>해킹 대회 입상</h3>
+                        <p class="activity-date">2023.11</p>
+                        <p>전국 대학생 해킹방어대회 본선 진출</p>
+                        <span class="badge badge-gold">Top 10</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon">💻</div>
+                    <div class="activity-content">
+                        <h3>CTF 참여</h3>
+                        <p class="activity-date">2022 - 현재</p>
+                        <p>국내외 CTF 대회 지속 참여 (Pwnable, Web 분야)</p>
+                        <div class="activity-tags">
+                            <span class="badge">CODEGATE</span>
+                            <span class="badge">HackCTF</span>
+                            <span class="badge">picoCTF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon">🔍</div>
+                    <div class="activity-content">
+                        <h3>Bug Bounty</h3>
+                        <p class="activity-date">2023 - 현재</p>
+                        <p>국내외 버그바운티 프로그램 참여 (3건 제보)</p>
+                        <div class="activity-tags">
+                            <span class="badge badge-success">XSS</span>
+                            <span class="badge badge-success">IDOR</span>
+                            <span class="badge badge-success">CSRF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon">👥</div>
+                    <div class="activity-content">
+                        <h3>보안 동아리 활동</h3>
+                        <p class="activity-date">2021 - 2024</p>
+                        <p>대학교 정보보안 동아리 핵심 멤버</p>
+                        <ul>
+                            <li>주간 보안 세미나 진행</li>
+                            <li>신입 부원 멘토링</li>
+                            <li>해킹 대회 참가 및 입상</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 Section -->
+    <section id="projects" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">04.</span>
+                프로젝트
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card" data-modal="project-1">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-type">Web Security</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>웹 취약점 자동 스캐너</h3>
+                        <p>Python 기반 웹 애플리케이션 취약점 자동 탐지 도구</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">BeautifulSoup</span>
+                            <span class="tech-tag">SQLMap</span>
+                        </div>
+                        <button class="project-btn">자세히 보기 →</button>
+                    </div>
+                </div>
+
+                <div class="project-card" data-modal="project-2">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-type">Penetration Testing</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>모의해킹 자동화 프레임워크</h3>
+                        <p>모의해킹 과정을 자동화하는 통합 프레임워크</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Metasploit</span>
+                            <span class="tech-tag">Nmap</span>
+                        </div>
+                        <button class="project-btn">자세히 보기 →</button>
+                    </div>
+                </div>
+
+                <div class="project-card" data-modal="project-3">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-type">Bug Bounty</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>XSS 취약점 탐지 도구</h3>
+                        <p>DOM-based XSS 자동 탐지 및 PoC 생성 도구</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Puppeteer</span>
+                        </div>
+                        <button class="project-btn">자세히 보기 →</button>
+                    </div>
+                </div>
+
+                <div class="project-card" data-modal="project-4">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-type">Research</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>API 보안 테스트 도구</h3>
+                        <p>RESTful API 취약점 진단 및 보고서 생성 도구</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                        <button class="project-btn">자세히 보기 →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">05.</span>
+                Contact
+            </h2>
+            <div class="contact-content">
+                <p class="contact-text">새로운 도전과 기회를 찾고 있습니다. 함께 일하고 싶으시다면 연락주세요!</p>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com" class="contact-link">
+                        <span class="contact-icon">📧</span>
+                        your.email@example.com
+                    </a>
+                    <a href="https://github.com/yourusername" class="contact-link" target="_blank">
+                        <span class="contact-icon">💻</span>
+                        GitHub
+                    </a>
+                    <a href="https://blog.example.com" class="contact-link" target="_blank">
+                        <span class="contact-icon">📝</span>
+                        Tech Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Web Hacker Portfolio. Built with passion and dedication.</p>
+            <p class="footer-quote">"Security is not a product, but a process." - Bruce Schneier</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
