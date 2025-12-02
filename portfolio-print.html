@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Hacker Portfolio - PDF Version</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* PDF 전용 추가 스타일 */
+        .expanded-content {
+            margin-top: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .expanded-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .expanded-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .expanded-content li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .expanded-content li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .detail-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .skills-container,
+        .tech-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        @media print {
+            .hero-visual,
+            .typing-wrapper,
+            .cursor {
+                display: none !important;
+            }
+
+            .expanded-content {
+                background: white !important;
+                border-left: 3px solid #ff6b35 !important;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section / About Me -->
+    <section id="about" class="hero">
+        <div class="container">
+            <div class="hero-content" style="grid-column: 1/-1;">
+                <div class="glitch-wrapper">
+                    <h1 class="hero-title" data-text="Web Security Researcher">Web Security Researcher</h1>
+                </div>
+                <div class="hero-description">
+                    <p style="color: var(--text-primary); font-size: 1.3rem; margin-bottom: 1.5rem;">
+                        안녕하세요! 웹 보안에 열정을 가진 신입 연구원입니다.
+                    </p>
+                    <p>취약점 분석과 모의해킹을 통해 더 안전한 웹 환경을 만들어가고 있습니다.</p>
+                    <p class="tech-stack">
+                        <span class="tag">Web Hacking</span>
+                        <span class="tag">Penetration Testing</span>
+                        <span class="tag">Vulnerability Analysis</span>
+                        <span class="tag">Bug Bounty</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 학력 & 경력 Section -->
+    <section id="education-career" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">01.</span>
+                학력 & 경력사항
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020.03 - 2024.02</span>
+                        <h3>OO대학교 컴퓨터공학과</h3>
+                        <p>학사 졸업 | GPA 3.8/4.5</p>
+                        <ul>
+                            <li>정보보안 동아리 활동</li>
+                            <li>웹 보안 관련 프로젝트 수행</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023.06 - 2023.12</span>
+                        <h3>보안회사 인턴</h3>
+                        <p>모의해킹팀 인턴십</p>
+                        <ul>
+                            <li>웹 애플리케이션 취약점 진단</li>
+                            <li>모의해킹 보고서 작성</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 교육 Section (확장 버전) -->
+    <section id="training" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">02.</span>
+                교육
+            </h2>
+
+            <!-- 교육 1 -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-header">
+                    <div class="card-icon">🎓</div>
+                    <span class="card-badge">수료</span>
+                </div>
+                <h3>웹 해킹 심화 과정</h3>
+                <p class="card-date">2023.01 - 2023.03 | OO보안아카데미</p>
+                <p>웹 애플리케이션 보안 심화 교육</p>
+
+                <div class="expanded-content">
+                    <div class="detail-section">
+                        <h4>📚 주요 학습 내용</h4>
+                        <ul>
+                            <li>OWASP Top 10 취약점에 대한 심화 학습</li>
+                            <li>SQL Injection, XSS, CSRF 등 주요 취약점 실습</li>
+                            <li>모의해킹 프로젝트를 통한 실전 경험</li>
+                            <li>취약점 분석 및 보고서 작성 역량 강화</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>🛠️ 습득 기술</h4>
+                        <div class="skills-container">
+                            <span class="tech-tag">SQL Injection</span>
+                            <span class="tech-tag">XSS</span>
+                            <span class="tech-tag">CSRF</span>
+                            <span class="tech-tag">Authentication Bypass</span>
+                            <span class="tech-tag">Session Hijacking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 교육 2 -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-header">
+                    <div class="card-icon">🔒</div>
+                    <span class="card-badge">수료</span>
+                </div>
+                <h3>모의해킹 전문가 과정</h3>
+                <p class="card-date">2023.06 - 2023.08 | XX정보보호교육센터</p>
+                <p>실전 모의해킹 교육</p>
+
+                <div class="expanded-content">
+                    <div class="detail-section">
+                        <h4>📚 주요 학습 내용</h4>
+                        <ul>
+                            <li>침투 테스트 방법론 (PTES, OWASP) 학습</li>
+                            <li>네트워크 보안 진단 및 취약점 분석</li>
+                            <li>보안 솔루션 우회 기법 연구</li>
+                            <li>실제 환경을 모방한 모의해킹 실습</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>🛠️ 습득 기술</h4>
+                        <div class="skills-container">
+                            <span class="tech-tag">Penetration Testing</span>
+                            <span class="tech-tag">Metasploit</span>
+                            <span class="tech-tag">Nmap</span>
+                            <span class="tech-tag">Burp Suite</span>
+                            <span class="tech-tag">Network Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 교육 3 -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-header">
+                    <div class="card-icon">🛡️</div>
+                    <span class="card-badge">수료</span>
+                </div>
+                <h3>Bug Bounty 헌터 과정</h3>
+                <p class="card-date">2023.09 - 2023.11 | 온라인 보안 교육 플랫폼</p>
+                <p>버그바운티 실전 교육</p>
+
+                <div class="expanded-content">
+                    <div class="detail-section">
+                        <h4>📚 주요 학습 내용</h4>
+                        <ul>
+                            <li>취약점 리서치 방법론 및 도구 활용</li>
+                            <li>PoC (Proof of Concept) 작성 및 검증</li>
+                            <li>효과적인 보고서 작성 및 커뮤니케이션</li>
+                            <li>실제 버그바운티 플랫폼 참여 경험</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>🛠️ 습득 기술</h4>
+                        <div class="skills-container">
+                            <span class="tech-tag">Bug Bounty</span>
+                            <span class="tech-tag">Vulnerability Research</span>
+                            <span class="tech-tag">PoC Development</span>
+                            <span class="tech-tag">Security Reporting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 활동 Section -->
+    <section id="activities" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">03.</span>
+                활동
+            </h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon">🏆</div>
+                    <div class="activity-content">
+                        <h3>해킹 대회 입상</h3>
+                        <p class="activity-date">2023.11</p>
+                        <p>전국 대학생 해킹방어대회 본선 진출</p>
+                        <span class="badge badge-gold">Top 10</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon">💻</div>
+                    <div class="activity-content">
+                        <h3>CTF 참여</h3>
+                        <p class="activity-date">2022 - 현재</p>
+                        <p>국내외 CTF 대회 지속 참여 (Pwnable, Web 분야)</p>
+                        <div class="activity-tags">
+                            <span class="badge">CODEGATE</span>
+                            <span class="badge">HackCTF</span>
+                            <span class="badge">picoCTF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon">🔍</div>
+                    <div class="activity-content">
+                        <h3>Bug Bounty</h3>
+                        <p class="activity-date">2023 - 현재</p>
+                        <p>국내외 버그바운티 프로그램 참여 (3건 제보)</p>
+                        <div class="activity-tags">
+                            <span class="badge badge-success">XSS</span>
+                            <span class="badge badge-success">IDOR</span>
+                            <span class="badge badge-success">CSRF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon">👥</div>
+                    <div class="activity-content">
+                        <h3>보안 동아리 활동</h3>
+                        <p class="activity-date">2021 - 2024</p>
+                        <p>대학교 정보보안 동아리 핵심 멤버</p>
+                        <ul>
+                            <li>주간 보안 세미나 진행</li>
+                            <li>신입 부원 멘토링</li>
+                            <li>해킹 대회 참가 및 입상</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 Section (확장 버전) -->
+    <section id="projects" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">04.</span>
+                프로젝트
+            </h2>
+
+            <!-- 프로젝트 1 -->
+            <div class="project-card" style="margin-bottom: 2rem;">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <span class="project-type">Web Security</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>웹 취약점 자동 스캐너</h3>
+                    <p class="card-date">2023.03 - 2023.05</p>
+                    <p>Python 기반 웹 애플리케이션 취약점 자동 탐지 도구</p>
+
+                    <div class="expanded-content">
+                        <div class="detail-section">
+                            <h4>💡 주요 기능</h4>
+                            <ul>
+                                <li>SQL Injection, XSS 등 주요 웹 취약점 자동 탐지</li>
+                                <li>크롤링 기능을 통한 전체 사이트 스캔</li>
+                                <li>취약점 발견 시 상세 리포트 생성</li>
+                                <li>False Positive를 줄이기 위한 검증 로직 구현</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🔧 기술 스택</h4>
+                            <div class="tech-container">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">BeautifulSoup</span>
+                                <span class="tech-tag">Requests</span>
+                                <span class="tech-tag">SQLMap</span>
+                                <span class="tech-tag">Selenium</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🏆 주요 성과</h4>
+                            <ul>
+                                <li>실제 테스트 환경에서 90% 이상의 탐지율 달성</li>
+                                <li>기존 도구 대비 40% 빠른 스캔 속도 구현</li>
+                                <li>GitHub에서 50+ stars 획득</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 프로젝트 2 -->
+            <div class="project-card" style="margin-bottom: 2rem;">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <span class="project-type">Penetration Testing</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>모의해킹 자동화 프레임워크</h3>
+                    <p class="card-date">2023.06 - 2023.08</p>
+                    <p>모의해킹 과정을 자동화하는 통합 프레임워크</p>
+
+                    <div class="expanded-content">
+                        <div class="detail-section">
+                            <h4>💡 주요 기능</h4>
+                            <ul>
+                                <li>정보 수집, 취약점 스캔, 침투 테스트 자동화</li>
+                                <li>Metasploit, Nmap 등 기존 도구와의 통합</li>
+                                <li>진행 상황 및 결과를 시각화하는 대시보드 제공</li>
+                                <li>커스터마이징 가능한 모듈식 구조 설계</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🔧 기술 스택</h4>
+                            <div class="tech-container">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Metasploit</span>
+                                <span class="tech-tag">Nmap</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🏆 주요 성과</h4>
+                            <ul>
+                                <li>모의해킹 소요 시간 60% 단축</li>
+                                <li>일관성 있는 테스트 프로세스 확립</li>
+                                <li>보안팀에서 실제 업무에 활용 중</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 프로젝트 3 -->
+            <div class="project-card" style="margin-bottom: 2rem;">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <span class="project-type">Bug Bounty</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>XSS 취약점 탐지 도구</h3>
+                    <p class="card-date">2023.09 - 2023.10</p>
+                    <p>DOM-based XSS 자동 탐지 및 PoC 생성 도구</p>
+
+                    <div class="expanded-content">
+                        <div class="detail-section">
+                            <h4>💡 주요 기능</h4>
+                            <ul>
+                                <li>Reflected, Stored, DOM-based XSS 탐지</li>
+                                <li>다양한 인코딩 및 우회 기법 자동 테스트</li>
+                                <li>발견된 취약점의 PoC 자동 생성</li>
+                                <li>WAF 우회를 위한 페이로드 변형 기능</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🔧 기술 스택</h4>
+                            <div class="tech-container">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Puppeteer</span>
+                                <span class="tech-tag">Chrome DevTools Protocol</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🏆 주요 성과</h4>
+                            <ul>
+                                <li>버그바운티에서 3건의 XSS 취약점 발견 및 보상 획득</li>
+                                <li>DOM-based XSS 탐지율 85% 달성</li>
+                                <li>다양한 WAF 우회 페이로드 데이터베이스 구축</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 프로젝트 4 -->
+            <div class="project-card" style="margin-bottom: 2rem;">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <span class="project-type">Research</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>API 보안 테스트 도구</h3>
+                    <p class="card-date">2023.11 - 2023.12</p>
+                    <p>RESTful API 취약점 진단 및 보고서 생성 도구</p>
+
+                    <div class="expanded-content">
+                        <div class="detail-section">
+                            <h4>💡 주요 기능</h4>
+                            <ul>
+                                <li>인증/인가 취약점 자동 탐지</li>
+                                <li>Rate Limiting, CORS 설정 등 보안 정책 검증</li>
+                                <li>JWT 토큰 분석 및 취약점 점검</li>
+                                <li>API 엔드포인트 자동 매핑 및 테스트</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🔧 기술 스택</h4>
+                            <div class="tech-container">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">JWT</span>
+                                <span class="tech-tag">OpenAPI/Swagger</span>
+                                <span class="tech-tag">Postman</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🏆 주요 성과</h4>
+                            <ul>
+                                <li>20개 이상의 API 보안 체크리스트 구현</li>
+                                <li>OWASP API Security Top 10 기반 테스트</li>
+                                <li>실제 프로젝트에서 5건의 중요 취약점 발견</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">05.</span>
+                Contact
+            </h2>
+            <div class="contact-content">
+                <p class="contact-text">새로운 도전과 기회를 찾고 있습니다. 함께 일하고 싶으시다면 연락주세요!</p>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com" class="contact-link">
+                        <span class="contact-icon">📧</span>
+                        your.email@example.com
+                    </a>
+                    <a href="https://github.com/yourusername" class="contact-link">
+                        <span class="contact-icon">💻</span>
+                        GitHub: github.com/yourusername
+                    </a>
+                    <a href="https://blog.example.com" class="contact-link">
+                        <span class="contact-icon">📝</span>
+                        Tech Blog: blog.example.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Web Hacker Portfolio. Built with passion and dedication.</p>
+            <p class="footer-quote">"Security is not a product, but a process." - Bruce Schneier</p>
+        </div>
+    </footer>
+</body>
+</html>

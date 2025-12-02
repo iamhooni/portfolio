@@ -1013,3 +1013,275 @@ body {
     background: var(--primary-color);
     color: white;
 }
+
+/* ==================== Print Styles (PDF Export) ==================== */
+@media print {
+    /* 기본 설정 */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    @page {
+        margin: 1.5cm;
+        size: A4;
+    }
+
+    body {
+        background: white !important;
+        color: #000 !important;
+    }
+
+    /* 불필요한 요소 숨기기 */
+    .navbar,
+    .hamburger,
+    .modal,
+    .cursor,
+    .hero-cta,
+    .card-btn,
+    .project-btn,
+    .btn {
+        display: none !important;
+    }
+
+    /* 배경색 조정 */
+    .hero,
+    .section,
+    .section-dark {
+        background: white !important;
+        padding: 2rem 0 !important;
+    }
+
+    .hero::before {
+        display: none;
+    }
+
+    /* 컨테이너 조정 */
+    .container {
+        max-width: 100% !important;
+        padding: 0 1rem !important;
+    }
+
+    /* 히어로 섹션 */
+    .hero {
+        min-height: auto !important;
+        padding-top: 1rem !important;
+    }
+
+    .hero .container {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .hero-visual {
+        display: none; /* 코드 윈도우는 PDF에서 숨김 */
+    }
+
+    .hero-title {
+        font-size: 2.5rem !important;
+        color: #ff6b35 !important;
+        background: none !important;
+        -webkit-text-fill-color: #ff6b35 !important;
+        animation: none !important;
+        page-break-after: avoid;
+    }
+
+    .hero-subtitle {
+        color: #333 !important;
+        page-break-after: avoid;
+    }
+
+    .hero-description p {
+        color: #333 !important;
+    }
+
+    /* 섹션 타이틀 */
+    .section-title {
+        font-size: 1.8rem !important;
+        color: #000 !important;
+        page-break-after: avoid;
+        margin-bottom: 1.5rem !important;
+        border-bottom: 2px solid #ff6b35;
+        padding-bottom: 0.5rem;
+    }
+
+    .section-number {
+        color: #ff6b35 !important;
+    }
+
+    /* 타임라인 */
+    .timeline::before {
+        background: #ff6b35 !important;
+    }
+
+    .timeline-marker {
+        background: #ff6b35 !important;
+        border-color: white !important;
+    }
+
+    .timeline-content,
+    .card,
+    .activity-item,
+    .project-card {
+        background: white !important;
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        transform: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 1rem !important;
+    }
+
+    .timeline-content h3,
+    .card h3,
+    .activity-content h3,
+    .project-content h3 {
+        color: #000 !important;
+    }
+
+    .timeline-content p,
+    .timeline-content li,
+    .card p,
+    .card-list li,
+    .activity-content p,
+    .activity-content li,
+    .project-content p {
+        color: #333 !important;
+    }
+
+    .timeline-date,
+    .card-date,
+    .activity-date {
+        background: #fff3e0 !important;
+        color: #ff6b35 !important;
+        border: 1px solid #ff6b35 !important;
+    }
+
+    /* 카드 그리드 */
+    .cards-grid,
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .card::before {
+        display: none;
+    }
+
+    .card-badge {
+        background: #e8f5e9 !important;
+        color: #00aa55 !important;
+    }
+
+    .card-icon {
+        filter: grayscale(0) !important;
+    }
+
+    /* 태그와 뱃지 */
+    .tag,
+    .tech-tag,
+    .badge {
+        background: white !important;
+        border: 1px solid #ff6b35 !important;
+        color: #ff6b35 !important;
+    }
+
+    .badge-gold {
+        border-color: #ffa000 !important;
+        color: #ffa000 !important;
+    }
+
+    .badge-success {
+        border-color: #00aa55 !important;
+        color: #00aa55 !important;
+    }
+
+    /* 프로젝트 카드 */
+    .project-image {
+        background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+        height: 100px !important;
+    }
+
+    .project-overlay {
+        background: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .project-type {
+        color: white !important;
+    }
+
+    /* 활동 */
+    .activity-item {
+        flex-direction: row !important;
+        gap: 1rem !important;
+    }
+
+    .activity-icon {
+        font-size: 2rem !important;
+        min-width: 40px !important;
+        height: 40px !important;
+    }
+
+    /* Contact */
+    .contact-link {
+        background: white !important;
+        border: 1px solid #ddd !important;
+        color: #333 !important;
+    }
+
+    .contact-link::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8rem;
+        color: #666;
+    }
+
+    /* Footer */
+    .footer {
+        background: white !important;
+        border-top: 1px solid #ddd !important;
+        padding: 1rem 0 !important;
+    }
+
+    .footer p,
+    .footer-quote {
+        color: #666 !important;
+    }
+
+    /* 페이지 구분 */
+    .section {
+        page-break-inside: avoid;
+    }
+
+    .timeline-item,
+    .card,
+    .activity-item,
+    .project-card {
+        page-break-inside: avoid;
+    }
+
+    /* 링크 색상 */
+    a {
+        color: #ff6b35 !important;
+        text-decoration: none;
+    }
+
+    /* 코드 윈도우 (만약 표시되는 경우) */
+    .code-window {
+        background: #f5f5f5 !important;
+        border: 1px solid #ddd !important;
+    }
+
+    .window-header {
+        background: #e0e0e0 !important;
+    }
+
+    .window-body {
+        color: #333 !important;
+    }
+
+    .comment { color: #22863a !important; }
+    .keyword { color: #005cc5 !important; }
+    .function { color: #6f42c1 !important; }
+    .string { color: #032f62 !important; }
+    .success { color: #28a745 !important; }
+}
