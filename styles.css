@@ -1021,6 +1021,7 @@ body {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
         color-adjust: exact !important;
+        overflow: visible !important;
     }
 
     @page {
@@ -1031,6 +1032,41 @@ body {
     body {
         background: white !important;
         color: #000 !important;
+    }
+
+    /* Flex/Grid 레이아웃 강제 Block 전환 */
+    .hero .container,
+    .cards-grid,
+    .projects-grid,
+    .activity-list,
+    .activity-item,
+    .contact-links,
+    .nav-menu,
+    .hero-cta,
+    .tech-stack,
+    .project-tech,
+    .activity-tags {
+        display: block !important;
+    }
+
+    /* 고정 요소 제거 */
+    header, footer, nav, .navbar, .fixed, .sticky {
+        position: static !important;
+    }
+
+    /* 페이지 강제 분리 */
+    .page-break {
+        page-break-before: always !important;
+        break-before: page !important;
+    }
+
+    /* 섹션별 페이지 분리 */
+    #education-career,
+    #training,
+    #activities,
+    #projects {
+        page-break-before: always !important;
+        break-before: page !important;
     }
 
     /* 불필요한 요소 숨기기 */
